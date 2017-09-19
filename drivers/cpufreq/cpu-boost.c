@@ -116,7 +116,7 @@ static inline int set_input_boost_freq_s2(const char *buf, const struct kernel_p
 
 static int get_input_boost_freq(char *buf, const struct kernel_param *kp, int step)
 {
-	int cnt = 0, cpuu, target_input_freq;
+	int cnt = 0, cpu, target_input_freq;
 	struct cpu_sync *s;
 
 	for_each_possible_cpu(cpu) {
@@ -418,7 +418,7 @@ static int cpu_boost_init(void)
 		return -EFAULT;
 
 	INIT_WORK(&input_boost_work, do_input_boost);
-    INIT_DELAYED_WORK(&input_boost_work_s2, do_input_boost_s2)
+	INIT_DELAYED_WORK(&input_boost_work_s2, do_input_boost_s2);
 	INIT_DELAYED_WORK(&input_boost_rem, do_input_boost_rem);
 
 	for_each_possible_cpu(cpu) {
