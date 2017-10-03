@@ -2,6 +2,7 @@
 # FLASH CONFIGURATION #
 #######################
 
+CONFIG_TRANSPARENT_HUGEPAGE=y
 CONFIG_LOCALVERSION="-paranoid"
 # CONFIG_CC_OPTIMIZE_FOR_SIZE is not set
 # CONFIG_MODULE_SIG is not set
